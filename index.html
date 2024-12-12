@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - RVCE Skill Lab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+        .profile-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .profile-container nav {
+            margin: 20px 0;
+        }
+        .profile-container nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+        .profile-container nav a:hover {
+            text-decoration: underline;
+        }
+        .profile-details {
+            margin-top: 20px;
+        }
+        .profile-details h2 {
+            color: #333;
+        }
+        .profile-details p {
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Skill Lab Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <div class="profile-container" id="profileContainer">
+        <h1>Welcome to Your Profile</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="profile-details">
+            <h2>Profile Details</h2>
+            <p>Name: John Doe</p>
+            <p>Email: john.doe@example.com</p>
+            <p>Role: Developer</p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                document.querySelector('.login-container').style.display = 'none';
+                document.getElementById('profileContainer').style.display = 'flex';
+            } else {
+                alert('Please enter both username and password.');
+            }
+        }
+    </script>
+</body>
+</html>
